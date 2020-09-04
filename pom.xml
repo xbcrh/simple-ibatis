@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <groupId>com.xiaobing</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>simple-batis</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>simple-batis</name>
+    <description>
+        the simple-batis
+    </description>
+
+    <contributors>
+        <contributor>
+            <name>xiabing</name>
+            <email>1509752666@qq.com</email>
+        </contributor>
+    </contributors>
+
+    <dependencies>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- mysql test -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+        </plugins>
+        <resources>
+
+        </resources>
+        <testResources>
+
+        </testResources>
+    </build>
+
+</project>

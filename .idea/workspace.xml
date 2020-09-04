@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7687e6d0-9dcb-415d-866c-95e2550c7f9e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$PROJECT_DIR$/../../mavenRepository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../apache-maven-3.6.3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gaaXDm27khbvB9zVSOxRnlZExV" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager" selected="JUnit.ExecutorTest.shouldConnect">
+    <configuration name="ExecutorTest.shouldConnect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-batis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.simple.ibatis.execute.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.simple.ibatis.execute" />
+      <option name="MAIN_CLASS_NAME" value="com.simple.ibatis.execute.ExecutorTest" />
+      <option name="METHOD_NAME" value="shouldConnect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Executor.shouldConnect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-batis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.simple.ibatis.execute.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.simple.ibatis.execute" />
+      <option name="MAIN_CLASS_NAME" value="com.simple.ibatis.execute.Executor" />
+      <option name="METHOD_NAME" value="shouldConnect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.simple.ibatis.execute in simple-batis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simple-batis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.simple.ibatis.execute.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.simple.ibatis.execute" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ExecutorTest.shouldConnect" />
+        <item itemvalue="JUnit.Executor.shouldConnect" />
+        <item itemvalue="JUnit.com.simple.ibatis.execute in simple-batis" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7687e6d0-9dcb-415d-866c-95e2550c7f9e" name="Default Changelist" comment="" />
+      <created>1598355195226</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598355195226</updated>
+      <workItem from="1598355197705" duration="4257000" />
+      <workItem from="1599143318100" duration="1901000" />
+      <workItem from="1599223832564" duration="1196000" />
+      <workItem from="1599227121552" duration="853000" />
+      <workItem from="1599227987894" duration="569000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="503" y="152" key="#com.intellij.ide.util.MemberChooser" timestamp="1599227267202">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state x="503" y="152" key="#com.intellij.ide.util.MemberChooser/0.23.1380.877@0.23.1380.877" timestamp="1599227267202" />
+    <state width="1338" height="264" key="GridCell.Tab.0.bottom" timestamp="1599228602183">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state width="1338" height="264" key="GridCell.Tab.0.bottom/0.23.1380.877@0.23.1380.877" timestamp="1599228602183" />
+    <state width="1338" height="264" key="GridCell.Tab.0.center" timestamp="1599228602182">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state width="1338" height="264" key="GridCell.Tab.0.center/0.23.1380.877@0.23.1380.877" timestamp="1599228602182" />
+    <state width="1338" height="264" key="GridCell.Tab.0.left" timestamp="1599228602182">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state width="1338" height="264" key="GridCell.Tab.0.left/0.23.1380.877@0.23.1380.877" timestamp="1599228602182" />
+    <state width="1338" height="264" key="GridCell.Tab.0.right" timestamp="1599228602183">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state width="1338" height="264" key="GridCell.Tab.0.right/0.23.1380.877@0.23.1380.877" timestamp="1599228602183" />
+    <state width="1338" height="264" key="GridCell.Tab.1.bottom" timestamp="1599228602183">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state width="1338" height="264" key="GridCell.Tab.1.bottom/0.23.1380.877@0.23.1380.877" timestamp="1599228602183" />
+    <state width="1338" height="264" key="GridCell.Tab.1.center" timestamp="1599228602183">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state width="1338" height="264" key="GridCell.Tab.1.center/0.23.1380.877@0.23.1380.877" timestamp="1599228602183" />
+    <state width="1338" height="264" key="GridCell.Tab.1.left" timestamp="1599228602183">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state width="1338" height="264" key="GridCell.Tab.1.left/0.23.1380.877@0.23.1380.877" timestamp="1599228602183" />
+    <state width="1338" height="264" key="GridCell.Tab.1.right" timestamp="1599228602183">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state width="1338" height="264" key="GridCell.Tab.1.right/0.23.1380.877@0.23.1380.877" timestamp="1599228602183" />
+    <state x="-49" y="55" key="SettingsEditor" timestamp="1599227935982">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state x="361" y="136" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1599144997075" />
+    <state x="-49" y="55" key="SettingsEditor/0.23.1380.877@0.23.1380.877" timestamp="1599227935982" />
+    <state x="347" y="156" key="SettingsEditor/0.23.1386.877@0.23.1386.877" timestamp="1598356600638" />
+    <state x="697" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1599223833351">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state x="727" y="278" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1599143317533" />
+    <state x="697" y="294" key="com.intellij.ide.util.TipDialog/0.23.1380.877@0.23.1380.877" timestamp="1599223833351" />
+    <state x="701" y="294" key="com.intellij.ide.util.TipDialog/0.23.1388.877@0.23.1388.877" timestamp="1598355200432" />
+    <state x="399" y="231" width="837" height="550" key="find.popup" timestamp="1599223952962">
+      <screen x="0" y="23" width="1380" height="877" />
+    </state>
+    <state x="399" y="231" width="837" height="550" key="find.popup/0.23.1380.877@0.23.1380.877" timestamp="1599223952962" />
+  </component>
+</project>
