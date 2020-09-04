@@ -3,6 +3,11 @@
 
 介绍：
 simple-batis是自己编写的一个简单ORM框架。在学习mybatis源码时，有感而发。耗时3周左右，基本满足了一些常用的Sql操作本项目所涉及的代码都是个人所写，没有一句copy，肯定不是很完善，大家理解下，后续有时间会一直更新。如果你对源码感兴趣，也可以加入一起,将自己的理解转为代码真的会加深印象。
+代码运行默认在java8上，因为用到了参数反射，所以在idea中记得开启parameters
+[
+1.File->Settings->Build,Execution,Deployment->Compiler->Java Compiler
+2.在 Additional command line parameters: 后面填上 -parameters
+]
 
 代码详情：
 
