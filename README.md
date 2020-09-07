@@ -88,6 +88,11 @@ ResultSetHandle 对查询结构ResultSet进行解析，转换为Java类型
 PackageUti 解析包的工具类
 TypeUtil 类型判断的工具类
 
+### 缓存类 com.simple.ibatis.cache
+Cache 缓存接口类
+SimpleCache 简单基本缓存类
+LruCache Lru淘汰策略缓存类
+
 ## 操作示例：
 
 ### 1. 构建pojo文件（并在数据库中建立该表）
@@ -124,7 +129,7 @@ package com.simple.ibatis.mapper;
 public interface App1 {
 
 @Select("SELECT name from sys_user where name = {user.name} and id = {id}")
-List<String> test3(User user, @Param("id") int id);
+List<String> select3(User user, @Param("id") int id);
 
 @Update("update sys_user set name = {user.name} where id = {user.id}")
 void update4(User user);
@@ -137,21 +142,23 @@ int insert5(@Param("user") User user);
 
 ### 3. 构建数据源和执行器工厂类：
 ```
-PoolDataSource poolDataSource = new PoolDataSource("com.mysql.jdbc.Driver","jdbc:mysql://localhost:3306/auth","root","root");
-/**输入mapper文件所在包及数据源*/
-ExecutorFactory executorFactory = new ExecutorFactory("com/simple/ibatis/mapper",poolDataSource);
+PoolDataSource poolDataSource = new PoolDataSource("com.mysql.jdbc.Driver","jdbc:mysql://101.132.150.75:3306/our-auth","root","root");
+Config config = new Config("com/simple/ibatis/mapper",poolDataSource);
+config.setOpenCache(true);
 ```
 
 ### 4. 操作：
 ```
+SimpleExecutor executor = config.getExecutor();
 App1 app1 = executor.getMapper(App1.class);
 User user = new User();
 user.setName("xiabing");
 user.setId(3);
 int count = app1.insert5(user);
-
 app1.update4(user);
-
 List<String> users = app1. select3(user,3);
+// 第二次从缓存获取
+List<String> users1 = app1. select3(user,3);
+
 System.out.println(users.get(0));
 ```

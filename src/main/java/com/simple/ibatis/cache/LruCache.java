@@ -1,6 +1,5 @@
 package com.simple.ibatis.cache;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -10,7 +9,7 @@ import java.util.Map;
  */
 public class LruCache implements Cache{
 
-    private static Integer cacheSize = 2;
+    private static Integer cacheSize = 100;
 
     private static Float loadFactory = 0.75F;
 

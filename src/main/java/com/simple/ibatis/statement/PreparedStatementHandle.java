@@ -5,6 +5,7 @@ import com.simple.ibatis.core.SqlSource;
 import com.simple.ibatis.datasource.PoolDataSource;
 import com.simple.ibatis.reflect.ObjectWrapper;
 import com.simple.ibatis.reflect.ObjectWrapperFactory;
+import com.simple.ibatis.transaction.Transaction;
 
 import java.lang.reflect.Method;
 import java.sql.Connection;
@@ -28,12 +29,12 @@ public class PreparedStatementHandle {
     private Method method;
 
     /**
-     * 数据源
+     * 事务
      */
-    private PoolDataSource poolDataSource;
+    private Transaction transaction;
 
     /**
-     * 连接
+     * 真实连接
      */
     private Connection connection;
 
@@ -42,12 +43,12 @@ public class PreparedStatementHandle {
      */
     private Object[] args;
 
-    public PreparedStatementHandle(MapperCore mapperCore, Method method, PoolDataSource poolDataSource, Object[] args) {
+    public PreparedStatementHandle(MapperCore mapperCore, Transaction transaction,Method method, Object[] args)throws SQLException {
         this.mapperCore = mapperCore;
         this.method = method;
-        this.poolDataSource = poolDataSource;
+        this.transaction = transaction;
         this.args = args;
-        connection = poolDataSource.getConnection();
+        this.connection = transaction.getConnection();
     }
 
     /**
@@ -125,8 +126,7 @@ public class PreparedStatementHandle {
         return preparedStatement;
     }
 
-    public void closeConnection(){
-
-        poolDataSource.removeConnection(connection);
+    public void closeConnection() throws SQLException{
+        transaction.close();
     }
 }
