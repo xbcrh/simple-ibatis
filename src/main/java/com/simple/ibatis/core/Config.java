@@ -1,6 +1,7 @@
 package com.simple.ibatis.core;
 
 import com.simple.ibatis.datasource.PoolDataSource;
+import com.simple.ibatis.execute.Executor;
 import com.simple.ibatis.execute.SimpleExecutor;
 
 /**
@@ -30,7 +31,7 @@ public class Config {
         this.mapperCore = new MapperCore(this);
     }
 
-    public SimpleExecutor getExecutor(){
+    public Executor getExecutor(){
         return new SimpleExecutor(this,this.getDataSource(),openTransaction,openCache);
     }
 

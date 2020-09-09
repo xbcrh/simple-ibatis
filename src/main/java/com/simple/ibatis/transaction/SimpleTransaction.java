@@ -13,8 +13,8 @@ public class SimpleTransaction implements Transaction{
 
     private Connection connection; // 数据库连接
     private PoolDataSource dataSource; // 数据源
-    private Integer level; // 事务隔离级别
-    private Boolean autoCommmit; // 是否自动提交
+    private Integer level = Connection.TRANSACTION_REPEATABLE_READ;; // 事务隔离级别
+    private Boolean autoCommmit = true; // 是否自动提交
 
     public SimpleTransaction(PoolDataSource dataSource){
         this(dataSource,null,null);
@@ -22,34 +22,48 @@ public class SimpleTransaction implements Transaction{
 
     public SimpleTransaction(PoolDataSource dataSource, Integer level, Boolean autoCommmit) {
         this.dataSource = dataSource;
-        this.level = level;
-        this.autoCommmit = autoCommmit;
+        if(level != null){
+            this.level = level;
+        }
+        if(autoCommmit != null){
+            this.autoCommmit = autoCommmit;
+        }
     }
 
     @Override
     public Connection getConnection() throws SQLException{
         this.connection = dataSource.getConnection();
-        if(autoCommmit != null){
-            this.connection.setAutoCommit(autoCommmit);
-        }
-        if(level != null){
-            this.connection.setTransactionIsolation(level);
-        }
+
+        this.connection.setAutoCommit(autoCommmit);
+
+        this.connection.setTransactionIsolation(level);
+
         return this.connection;
     }
 
     @Override
     public void commit() throws SQLException{
-        this.connection.commit();
+        if(this.connection != null){
+            this.connection.commit();
+        }
     }
 
     @Override
     public void rollback() throws SQLException{
-        this.connection.rollback();
+        if(this.connection != null){
+            this.connection.rollback();
+        }
     }
 
     @Override
     public void close() throws SQLException{
-        dataSource.removeConnection(connection);
+        if(!autoCommmit && connection != null){
+           connection.rollback();
+        }
+
+        if(connection != null){
+            dataSource.removeConnection(connection);
+        }
+        this.connection = null;
     }
 }

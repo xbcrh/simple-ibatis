@@ -40,7 +40,7 @@ public class SimpleExecutor implements Executor{
             this.cache = new LruCache(new SimpleCache());
         }
         if(openTransaction){
-            this.transaction = TransactionFactory.newTransaction(poolDataSource,Connection.TRANSACTION_REPEATABLE_READ,true);
+            this.transaction = TransactionFactory.newTransaction(poolDataSource,Connection.TRANSACTION_REPEATABLE_READ,false);
         }else {
             this.transaction = TransactionFactory.newTransaction(poolDataSource,null,null);
         }
@@ -60,12 +60,13 @@ public class SimpleExecutor implements Executor{
 
         PreparedStatementHandle preparedStatementHandle = new PreparedStatementHandle(mapperCore,transaction,method,args);
         PreparedStatement preparedStatement = preparedStatementHandle.generateStatement();
+        ResultSet resultSet = null;
         preparedStatement.executeQuery();
-        ResultSet resultSet = preparedStatement.getResultSet();
-        preparedStatementHandle.closeConnection();
+        resultSet = preparedStatement.getResultSet();
 
         Class returnClass = mapperCore.getReturnType(method);
         if(returnClass == null || void.class.equals(returnClass)){
+            preparedStatement.close();
             return null;
         }else {
             ResultSetHandle resultSetHandle = new ResultSetHandle(returnClass,resultSet);
@@ -73,43 +74,49 @@ public class SimpleExecutor implements Executor{
             if(cache != null){
                 cache.putCache(cacheKey,res);
             }
+            preparedStatement.close();
+            resultSet.close();
             return res;
         }
-
     }
 
     public int update(Method method,Object[] args)throws SQLException{
+        PreparedStatementHandle preparedStatementHandle = null;
+        PreparedStatement preparedStatement = null;
+        Integer count = 0;
+
         if(cache != null){
             cache.cleanCache();
         }
-        PreparedStatementHandle preparedStatementHandle = new PreparedStatementHandle(mapperCore,transaction,method,args);
-        PreparedStatement preparedStatement = preparedStatementHandle.generateStatement();
-        Integer count = preparedStatement.executeUpdate();
-        preparedStatementHandle.closeConnection();
+        try{
+            preparedStatementHandle = new PreparedStatementHandle(mapperCore,transaction,method,args);
+            preparedStatement = preparedStatementHandle.generateStatement();
+            count = preparedStatement.executeUpdate();
+        }finally {
+            if(preparedStatement != null){
+                preparedStatement.close();
+            }
+        }
+
         return count;
     }
 
     @Override
-    public <T> T select(String statement, Object parameter) {
-        return null;
+    public void commit() throws SQLException {
+        transaction.commit();
     }
 
     @Override
-    public <E> List<E> selectList(String statement, Object parameter) {
-        return null;
+    public void rollback() throws SQLException {
+        transaction.rollback();
     }
 
     @Override
-    public int update(String statement, Object parameter) {
-        return 0;
+    public void close() throws SQLException {
+        transaction.close();
     }
 
-    @Override
-    public int delete(String statement, Object parameter) {
-        return 0;
-    }
-
-    private String generateCacheKey(Method method,Object args[]){
+    private String generateCacheKey(Method method, Object args[]){
         StringBuilder cacheKey = new StringBuilder(method.getDeclaringClass().getName() + method.getName());
         for(Object o:args){
             cacheKey.append(o.toString());

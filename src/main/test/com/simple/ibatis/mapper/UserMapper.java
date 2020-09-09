@@ -19,4 +19,6 @@ public interface UserMapper {
     @Update("update sys_user set name = {user.name} where  id = {user.id}")
     int update(User user);
 
+    @Select("select * from sys_user where id = {id}")
+    User getUserById(Integer id);
 }
