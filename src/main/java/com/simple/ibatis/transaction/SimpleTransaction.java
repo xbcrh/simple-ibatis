@@ -55,15 +55,17 @@ public class SimpleTransaction implements Transaction{
         }
     }
 
+    /**关闭链接前，若设置了自动提交为false，则必须进行回滚操作*/
     @Override
     public void close() throws SQLException{
         if(!autoCommmit && connection != null){
            connection.rollback();
         }
-
+        /**放回连接池*/
         if(connection != null){
             dataSource.removeConnection(connection);
         }
+        /**链接设为null*/
         this.connection = null;
     }
 }

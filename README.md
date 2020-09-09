@@ -162,3 +162,8 @@ List<String> users1 = app1. select3(user,3);
 
 System.out.println(users.get(0));
 ```
+## 提示
+
+因为测试类可能会改变，具体代码参考项目中的测试类。
+
+[博文地址](https://www.cnblogs.com/xiaobingblog/p/13617159.html)
